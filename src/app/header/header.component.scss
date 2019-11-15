@@ -1,0 +1,70 @@
+.navbar {
+  padding: 0 20px;
+}
+
+button.navbar-toggler {
+  border: none;
+  padding: 0;
+}
+
+.nav-item {
+  display: block;
+}
+
+.navbar-brand {
+  color: #ED3833;
+}
+
+.nav-link:focus, .nav-link:hover, .dropdown-item:hover, .dropdown-item:focus {
+  color: #ED3833 !important;
+}
+
+.dropdown-item:active {
+  background: #fff;
+}
+/*
+ul.menu li:hover, ul.menu li:active, ul.menu li:focus{
+   color: #ED3833!important;
+}
+*/
+.show {
+  border: none;
+}
+
+button:focus {
+  outline: none
+}
+
+.basket {
+  background: url(../../assets/img/basket.png) no-repeat left;
+  padding-left: 28px !important;
+}
+
+.basket:hover, .basket:focus {
+  background: url(../../assets/img/basket-hover.png) no-repeat left;
+}
+
+/*
+button.navbar-toggler[_ngcontent-lvv-c47] {
+   border: none;
+   padding: 0;
+}
+.navbar-toggler {
+   font-size: 1.25rem;
+   line-height: 1;
+   background-color: transparent;
+   border: 1px solid transparent;
+}
+.navbar-collapse {
+    flex-basis: 100%;
+    flex-grow: 1;
+    align-items: center;
+}
+*/
+
+
+@media screen and (max-width: 500px) {
+  .navbar-brand {
+    font-size: 0.8rem;
+  }
+}

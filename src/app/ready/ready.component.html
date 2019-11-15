@@ -1,0 +1,61 @@
+<div class="container">
+  <h1>Dish Sets</h1>
+  <div class="set shadow"
+       *ngFor="let set of ready">
+    <div class="header">
+      <h4>{{set.name}}</h4>
+      <img *ngIf="(contains(set.dishes,'beef') || contains(set.dishes,'veal')) == false" class="image" src="../../assets/img/beef-icon.png" alt="beef free" data-title="beef free">
+      <img *ngIf="(contains(set.dishes,'pork') || contains(set.dishes,'ham')) == false" class="image" src="../../assets/img/pork-icon.png" alt="beef free" data-title="pork free">
+      <img *ngIf="isDairyFree(set.dishes) == true" class="image" src="../../assets/img/dairy-icon.png" alt="dairy free" data-title="dairy free">
+    </div>
+    <div class="row justify-content-between">
+      <div class="col-lg-2 set-dishes shadow"
+           *ngFor="let cat of numCategories"
+           [ngStyle]="{'border-color': properties.get(cat).color}">
+        <h5>{{category[cat]}}</h5>
+        <div class="dish-set">
+          <div class="dish" *ngFor="let dish of getDishOfCategory(cat,set)">
+            <span><img class="picture" src="{{dish.pict}}" alt=""></span>
+            <p class="text">{{dish.name}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom" *ngIf="!set.selected">
+      <button class="btn btn-button"
+              (click)="setOrder(set)">
+        add to order
+      </button>
+    </div>
+    <div class="bottom" *ngIf="set.selected">
+      <button class="btn btn-button"
+              (click)="delOrder(set)">
+        remove from order
+      </button>
+    </div>
+  </div>
+  <app-pop-order class="pop"></app-pop-order>
+</div>
+
+
+
+
+
+<!--
+<div class="container">
+   <div class="row set" *ngFor="let set of ready">
+      {{set.name}},
+      beef: {{contains(set.dishes,"beef")}},
+      pork: {{contains(set.dishes,"pork")||contains(set.dishes,"ham")}}
+      <div class="col-lg-1"  *ngFor="let x of set.dishes">
+            <span><img class="pict" src="{{x.pict}}" alt=""></span>
+            {{x.name}}
+      </div>
+   <div *ngIf="!set.selected">
+      <button class="btn btn-warning"
+      (click)="setOrder(set)">add</button>
+   </div>
+   </div>
+</div>
+{{isDairyFree(set)}}
+-->

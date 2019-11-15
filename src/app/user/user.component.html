@@ -1,0 +1,78 @@
+<div class="container" *ngIf="order.isComplete() else wrong">
+  <div class="col-md-8 order-md-1">
+    <h1 class="mb-3">Contact details</h1>
+    <form class="needs-validation" novalidate="" [formGroup]="checkoutForm"
+          (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="name">Full name</label>
+          <input type="text" class="form-control" id="name" placeholder="" value="" required formControlName="customerName">
+          <div class="invalid-feedback">
+            Valid full name is required.
+          </div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" placeholder="you@example.com" formControlName="customerEmail">
+        <div class="invalid-feedback">
+          Please enter a valid email address for shipping updates.
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="address">Delivery Address</label>
+        <input type="text" class="form-control" id="address" placeholder="1234 Main St" required="" formControlName="customerAddress">
+        <div class="invalid-feedback">
+          Please enter your shipping address.
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="suburb">Suburb</label>
+        <input type="text" class="form-control" id="suburb" placeholder="Suburb" formControlName="customerSuburb">
+      </div>
+      <div class="mb-3">
+        <label for="phone">Phone</label>
+        <input type="text" [mask]="'{+64} ([00]) [000] [00] [00]'" class="form-control" id="phone" formControlName="customerPhone">
+      </div>
+      <div class="mb-3">
+        <label for="date">Delivery date</label>
+        <select required class="form-control" formControlName="deliveryDateTime" id="date">
+          <option *ngFor="let dt of dates" value="{{dt}}">{{dt | date:'fullDate'}}</option>
+        </select>
+        </div>
+      <h4 class="mb-3">Payment</h4>
+      <div class="d-block my-3">
+        <div class="custom-control custom-radio">
+          <input id="cash" name="paymentMethod" type="radio" class="custom-control-input" checked required=""
+                 (click)="radioClick('none', 'block')" [disabled]="!checkoutForm.valid">
+          <label class="custom-control-label" for="cash">Cash</label>
+        </div>
+        <div class="custom-control custom-radio">
+          <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required=""
+                 (click)="radioClick('block', 'none')" [disabled]="!checkoutForm.valid">
+          <label class="custom-control-label" for="paypal">PayPal</label>
+        </div>
+      </div>
+      <div id="paypal" [ngStyle]="{'display':checked1}">
+        <p>You will be redirected on PayPal website for payment</p>
+        <app-paypal [checkoutForm]="checkoutForm"></app-paypal>
+        <div #paypal></div>
+      </div>
+      <hr class="mb-4">
+      <button class="btn btn-button shadow" type="submit"
+              [disabled]="!checkoutForm.valid"
+              [ngStyle]="{'display':checked2}"
+              (click)="onSubmit()">
+        Continue to checkout
+      </button>
+    </form>
+  </div>
+  <app-pop-order class="pop"></app-pop-order>
+</div>
+<ng-template #wrong>
+  <div class="wrong">
+    <h1>Warning!</h1>
+    <p>This page is unavailable.</p>
+    <p>Please start your order from the <a routerLink="/">Home Page</a></p>
+  </div>
+</ng-template>

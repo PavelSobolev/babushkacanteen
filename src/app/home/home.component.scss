@@ -1,0 +1,133 @@
+$red: #ED3833;
+
+h1 {
+  color: $red;
+}
+
+a {
+  color: #000;
+  text-decoration: underline;
+}
+
+a:hover, a:active {
+  color: $red;
+  text-decoration: none;
+}
+
+.head {
+  background: url(../../assets/img/header.jpg) no-repeat;
+  background-size: cover;
+  padding: 100px 0;
+}
+
+.subtitle {
+  display: block;
+  font-size: 1.5rem;
+  margin: 40px 0 100px 0;
+  width: 70%;
+}
+
+.header-text {
+  background-color: $red;
+  border-radius: 10px;
+  color: #fff;
+  display: inline-block;
+  padding: 20px 50px 10px;
+  margin-top: 18px;
+
+  p {
+    margin-bottom: 7px;
+  }
+}
+
+.rest {
+  padding: 40px;
+
+  h2 {
+    text-align: center;
+    padding-bottom: 20px;
+  }
+}
+
+.rest-left {
+  padding: 30px;
+  text-align: center;
+}
+
+.rest-right {
+  padding: 20px 50px;
+}
+
+.about {
+  background: url(../../assets/img/zakaz.jpg) no-repeat center top fixed;
+  background-size: cover;
+  color: #fff;
+}
+
+.about-text {
+  padding: 70px;
+}
+
+.order {
+  padding: 50px;
+
+  h2 {
+    text-align: center;
+    padding-bottom: 20px;
+  }
+}
+
+.btn-success {
+  border-radius: 30px;
+  padding: 10px 30px;
+  margin-bottom: 20px;
+}
+
+.order-down {
+  text-align: center;
+}
+
+.delivery {
+  background: #F5F5F5;
+  padding: 60px 0;
+
+  h2 {
+    text-align: center;
+    padding-bottom: 40px;
+    color: $red;
+  }
+}
+
+.picture {
+  display: block;
+  width: 100%;
+}
+
+@media screen and (max-width: 990px) {
+  .header-text {
+    margin-top: 0;
+  }
+
+  .subtitle {
+    margin: 10px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .about-text, .order, .rest-right {
+    padding: 20px;
+  }
+
+  .rest {
+    padding: 20px;
+  }
+
+  .dlg_mess {
+    text-align: center;
+  }
+
+  .rest-right {
+    padding: 10px;
+  }
+}

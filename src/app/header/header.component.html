@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-light px-md-4 bg-white border-bottom shadow-sm fixed-top">
+  <a class="navbar-brand" routerLink="/">
+    <img src="../../assets/img/bear.png" alt="">
+    <span style="text-transform:capitalize">
+      Russian Granny Online canteen
+    </span>
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-md-auto" id="menu">
+      <li class="nav-item">
+        <a class="nav-link item" routerLink="/">Home</a>
+      </li>
+      <li>
+        <a class="nav-link item" routerLink="/ready">Sets</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dishes
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item item" routerLink="dishes/0">Soups</a>
+          <a class="dropdown-item item" routerLink="dishes/1">Main</a>
+          <a class="dropdown-item item" routerLink="dishes/2">Sides</a>
+          <a class="dropdown-item item" routerLink="dishes/3">Salads</a>
+          <a class="dropdown-item item" routerLink="dishes/4">Desserts</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link item basket" routerLink="/order">Cart</a>
+      </li>
+    </ul>
+  </div>
+</nav>

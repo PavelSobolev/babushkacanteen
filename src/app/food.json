@@ -1,0 +1,24 @@
+// soup, main, garnish, dessert, salad
+[
+  {
+    "id" :  1,
+    "category": "soup",
+    "name": "peas",
+    "ingrideinets": [ "peas", "meat", "potato" ],
+    "pict": "http://www.site.com/picts/pict1.png"
+  },
+  {
+    "id" :  2,
+    "category": "main",
+    "name": "BBQ",
+    "ingrideinets": [ "pork", "sauce" ],
+    "pict": "http://www.site.com/picts/pict2.png"
+  },
+  {
+    "id" : 3,
+    "category": "garnish",
+    "name": "mushed potato",
+    "ingrideinets": [ "potato", "butter", "milk" ],
+    "pict": "http://www.site.com/picts/pict3.png"
+  }
+]

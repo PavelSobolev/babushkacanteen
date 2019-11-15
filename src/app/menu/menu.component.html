@@ -1,0 +1,7 @@
+<ul class="menu">
+   <li *ngFor="let item of numCategories" [ngStyle]="{'background-color': properties.get(item).color}">
+      <a class="menu-item shadow" routerLink="../{{item}}"      
+      [ngClass]="{'active': numCat==item}"
+      >{{category[item]}}</a>
+   </li>
+</ul>

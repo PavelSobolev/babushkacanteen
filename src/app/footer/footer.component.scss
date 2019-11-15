@@ -1,0 +1,41 @@
+.footer {
+  background: linear-gradient(rgba(220, 220, 220, 0.7), rgba(220, 220, 220, 0.7)), url(../../assets/img/bg.jpg) no-repeat right;
+  background-size: cover;
+
+  h2 {
+    color: #ED3833;
+    font-size: 2.7rem;
+    font-weight: bold;
+  }
+
+  h3 {
+    margin-bottom: 0 !important;
+  }
+}
+
+.row {
+  align-items: center;
+}
+
+.footer-left {
+  padding: 20px 0 0 0px;
+}
+
+.footer-middle {
+  text-align: center;
+}
+
+.footer-right {
+  color: #ED3833;
+  text-align: center;
+
+  p {
+    margin-bottom: 0 !important;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .footer {
+    text-align: center;
+  }
+}

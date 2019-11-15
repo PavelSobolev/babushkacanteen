@@ -1,0 +1,31 @@
+<div class="container-fluid">
+  <div class="col-lg-8 col-md-10 text-center my-col main" *ngIf="isComplete else wrong">
+    <h1>Thank you {{customerName}}</h1>
+    <h5>You order #{{id}} is confirmed<span *ngIf="isPaid"> and paid</span>.</h5>
+    <h5>Your Russian granny is cooking meal for you.</h5>
+    <br>
+    <h3>Here are your order details: </h3>
+    <ul>
+      <li>Order reference id: {{id}}.</li>
+      <li>Order delivery date: {{deliveryDateTime| date:'fullDate'}}.</li>
+      <li>Order delivery address: {{customerAddress}}, {{customerSuburb}}.</li>
+      <li>Your phone number: {{customerPhone}}.</li>
+    </ul>
+    <h3>Your order includes:</h3>
+    <ul>
+      <li>Main dishes: {{main[0].name}}, {{main[1].name}} (1 kilogram each).</li>
+      <li>Soups: {{soup[0].name}}, {{soup[1].name}} (1 litre each).</li>
+      <li>Side dishes:  {{garnish[0].name}}, {{garnish[1].name}} (1 kilogram each).</li>
+      <li>Salad: {{salad[0].name}} (1 kiligram).</li>
+      <li>Dessert: {{dessert[0].name}} (1 kiligram).</li>
+    </ul>
+    <p class="paymant" *ngIf="!isPaid">Payment (${{price}}) should be made upon delivery of the order. </p>
+  </div>
+  <ng-template #wrong>
+    <div class="wrong">
+      <h1>Warning!</h1>
+      <p>This page is unavailable.</p>
+      <p>Please start your order from the <a routerLink="/">Home Page</a></p>
+    </div>
+  </ng-template>
+</div>

@@ -1,0 +1,11 @@
+<div class="box shadow" (click)="movePop()">
+  <div class="dish"
+       *ngFor="let cat of numCategories"
+       [ngStyle]="{'background-color': properties.get(cat).color}">
+    <div class="set"
+         *ngFor="let dish of getDishesInCategory(cat)">
+      <a routerLink="/dishes/{{cat}}"><img class="picture" src="{{dish.pict}}" alt=""> </a>
+    </div>
+  </div>
+  <a class="next" routerLink="/user" *ngIf="order.isComplete()">Continue</a>
+</div> 

@@ -1,0 +1,26 @@
+<div class="container">
+  <h1>Your cart<span *ngIf="!order.isNotEmpty()"> is empty</span></h1>
+  <p class="add"
+     *ngIf="orderService.orderCountdown() != '0'">You should add {{orderService.orderCountdown()}} more {{orderService.orderCountdown() == '1'? 'dish': 'dishes'}} to complete the order</p>
+  <div class="row justify-content-between">
+    <div class="col-lg-2 dish shadow"
+         *ngFor="let cat of numCategories"
+         [ngStyle]="{'border-color': properties.get(cat).color}">
+      <h5 [ngStyle]="{'border-bottom-color': properties.get(cat).color}">{{category[cat]}}</h5>
+      <div class="dish-set">
+        <a class="set" routerLink="/dishes/{{cat}}"
+           *ngFor="let dish of getDishesInCategory(cat)">
+          <img class="picture" src="{{dish.pict}}" alt="dish">
+          <p class="text">{{dish.name}}</p>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="bottom">
+    <button class=" btn btn-button shadow"
+            (click)="goToUser()"
+            *ngIf="order.isComplete()">
+      Proceed to checkout
+    </button>
+  </div>
+</div>
