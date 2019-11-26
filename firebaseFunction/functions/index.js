@@ -12,10 +12,10 @@ let transporter = nodemailer.createTransport(smtpTransport({
     host: 'smtp.gmail.com',
     auth: {
         xoauth2: xoauth2.createXOAuth2Generator({
-            user: 'sakhiepimail@gmail.com',
-            clientId: '589056039847-ceqn67eiojkf10o9fkjc958tg03me19i.apps.googleusercontent.com',
-            clientSecret: 'ewV28s5ch95iS2ddJBO7Djqw',
-            refreshToken: '1/uPA8j3POhoQ89KRaIdgasMFtbwbEvJk1skGRI7V1R5I'
+            user: '***',
+            clientId: '***',
+            clientSecret: '***',
+            refreshToken: '***'
             })
     }
 }));
